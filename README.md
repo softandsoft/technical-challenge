@@ -1,20 +1,11 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Introducción 
+El siguiente proyecto es un API de mantenimiento de productos desarrollado en net core con lenguaje C# y base de datos SQL Server.
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+# Pasos:
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+Estos son los pasos para levantar el proyecto:
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
-
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+1.	Ejecutar el archivo Script.sql que se encuentra en la raiz del proyecto.
+2.	Modificar la cadena de conexión ubicada en el archivo appsettings.json en caso sea necesario.
+3.	Abrir la solución con Visual Studio y ejecutar el proyecto TektonLabs.Api.
+4.	En caso todo este bien, se mostrar una pantalla Swagger con los métodos desarrollados.
