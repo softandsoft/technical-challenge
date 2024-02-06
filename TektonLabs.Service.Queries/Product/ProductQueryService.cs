@@ -7,14 +7,14 @@ using AutoMapper;
 using TektonLabs.Domain.DTOs.Response;
 using TektonLabs.Domain.Entities;
 using Microsoft.Extensions.Caching.Memory;
+using TektonLabs.Service.Queries.Discount;
 
-namespace TektonLabs.Service.Queries.Company
+namespace TektonLabs.Service.Queries.Product
 {
     public interface IProductQueryService
     {
         Task<WebApiResponse> GetByIdAsync(string id);
         Task<List<Status>> GetStatusAsync();
-
     }
 
     public class ProductQueryService : IProductQueryService
@@ -23,18 +23,21 @@ namespace TektonLabs.Service.Queries.Company
         private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
         private readonly IMemoryCache _memoryCache;
+        private readonly IDiscountQueryService _discountQueryService;
 
         public ProductQueryService(
             ILogger<ProductQueryService> logger,
             IProductRepository productRepository,
             IMapper mapper,
-            IMemoryCache memoryCache
+            IMemoryCache memoryCache,
+            IDiscountQueryService discountQueryService
         )
         {
             _logger = logger;
             _productRepository = productRepository;
             _mapper = mapper;
             _memoryCache = memoryCache;
+            _discountQueryService = discountQueryService;
         }
 
         public async Task<WebApiResponse> GetByIdAsync(string id)
@@ -70,8 +73,10 @@ namespace TektonLabs.Service.Queries.Company
                     return GetStatusAsync();
                 });
 
+                List<Domain.Entities.Discount> discounts = await _discountQueryService.GetDiscounts();
+
                 product.StatusName = status.FirstOrDefault(x => x.Id == entity.Status).Name;
-                product.Discount = 30;
+                product.Discount = discounts.FirstOrDefault(x => x.productId == id) == null ? 0 : discounts.FirstOrDefault(x => x.productId == id).discount;
                 product.FinalPrice = product.Price * (100 - product.Discount) / 100;
 
                 response.Success = true;

@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TektonLabs.Domain\TektonLabs.Domain.csproj" />
     <ProjectReference Include="..\TektonLabs.Persistence.Database\TektonLabs.Persistence.SqlServer.csproj" />
   </ItemGroup>
 

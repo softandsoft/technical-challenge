@@ -1,7 +1,8 @@
 
 using TektonLabs.Domain.Interfaces;
 using TektonLabs.Persistence.Database.Repository;
-using TektonLabs.Service.Queries.Company;
+using TektonLabs.Service.Queries.Discount;
+using TektonLabs.Service.Queries.Product;
 
 namespace TektonLabs.Api.Extensions
 {
@@ -15,6 +16,7 @@ namespace TektonLabs.Api.Extensions
         public static void ConfigureServicesManager(this IServiceCollection services)
         {
             services.AddScoped<IProductQueryService, ProductQueryService>();
+            services.AddScoped<IDiscountQueryService, DiscountQueryService>();
         }
     }
 }

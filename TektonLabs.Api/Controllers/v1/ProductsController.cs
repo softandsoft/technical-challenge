@@ -1,7 +1,7 @@
 
 using TektonLabs.Domain;
 using TektonLabs.Service.EventHandlers.Company.Commands;
-using TektonLabs.Service.Queries.Company;
+using TektonLabs.Service.Queries.Product;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;

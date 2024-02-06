@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TektonLabs.Domain.DTOs.Request
+﻿namespace TektonLabs.Domain.DTOs.Request
 {
     public class ProductUpdateRequest
     {
