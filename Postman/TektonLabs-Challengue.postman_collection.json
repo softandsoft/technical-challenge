@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "10bd7f99-ad95-44f3-a850-ec65245520d1",
+		"name": "TektonLabs-Challengue",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1349475"
+	},
+	"item": [
+		{
+			"name": "GET Products",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:7243/api/v1/Products/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7243",
+					"path": [
+						"api",
+						"v1",
+						"Products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Products",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"CPU\",\r\n    \"description\": \"gdfsgdfsg\",\r\n    \"stock\": 2,\r\n    \"price\": 100,\r\n    \"status\": \"1\",\r\n    \"creationUser\": \"cvallejo\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7243/api/v1/Products",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7243",
+					"path": [
+						"api",
+						"v1",
+						"Products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Products",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"parlante modificado\",\r\n    \"description\": \"gfdgfddddddddddddddd\",\r\n    \"stock\": 20,\r\n    \"price\": 120,\r\n    \"status\": \"0\",\r\n    \"modificationUser\": \"jcarrera\"\r\n}"
+				},
+				"url": {
+					"raw": "https://localhost:7243/api/v1/Products/3",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7243",
+					"path": [
+						"api",
+						"v1",
+						"Products",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Discounts Mock",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://demo5796642.mockable.io/discounts",
+					"protocol": "https",
+					"host": [
+						"demo5796642",
+						"mockable",
+						"io"
+					],
+					"path": [
+						"discounts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
